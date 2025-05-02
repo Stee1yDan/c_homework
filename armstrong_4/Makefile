@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c99 -g
 LDFLAGS = -lm
-SRC = armstrong.c main.c 
+SRC = array_utils.c input_processor.c armstrong.c linked_list_utils.c utils.c main.c 
 OBJ = $(SRC:.c=.o)
 TARGET = main
 

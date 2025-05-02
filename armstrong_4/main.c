@@ -1,6 +1,7 @@
-#include "array_utils.h"
-#include "armstrong.h"
+#include "linked_list_utils.h"
 #include "input_processor.h"
+#include "armstrong.h"
+#include "utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -24,14 +25,12 @@ int main() {
     } 
     char* filtered_line = filter_numbers_str(line);
 
-    size_t size;
-    int* arr = convert_string_to_int_array(filtered_line, &size);
+    List* list = convert_string_to_int_list(filtered_line);
+    list_armstrong_transform(&list, n);
 
-    armstrong_transform(&arr, &size, n);
+    list_print(list);
 
-    print_array(arr, size);
-
-    free(line);
+    list_destroy(list);
     free(filtered_line);
-    free(arr);
+    free(line);
 }

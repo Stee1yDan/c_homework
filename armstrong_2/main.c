@@ -1,4 +1,6 @@
 #include "array_utils.h"
+#include "armstrong.h"
+#include "utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -42,4 +44,6 @@ int main() {
     armstrong_transform(&arr, &size, n);
 
     print_array(arr, size);
+
+    free(arr);
 }
